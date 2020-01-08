@@ -14,7 +14,7 @@ def write_to_sheet(event):
     # Extract and print all of the values
     try:
         cell = sheet.find(event['datetime'])
-        print "The event already been recorded"
+        print("The event already been recorded")
     except:
-        print "Adding new event"
+        print("Adding new event")
         sheet.append_row(event.values(), value_input_option='RAW')
