@@ -7,6 +7,3 @@ def main():
     events = scrape_website(events_page)
     for event in events:
         write_to_sheet(event)
-
-if __name__ == "__main__":
-    main()
