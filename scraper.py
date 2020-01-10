@@ -22,10 +22,10 @@ def scrape_website(website_url):
         event_datetime = datetime.strptime(event_date, TIME_PRESET)
         artist = mini_soup.find(attrs={'class': 'longdesc'}).text
         try:
-            artist = str(artist.replace("\n", "").encode("utf-8"))
+            # artist = str(artist.replace("\n", "").encode("utf-8"))
+            artist = str(artist.replace("\n", ""))
         except UnicodeEncodeError as e:
             print("Couldn't parse artist - %s" % e.message)
-
         event_body = {
             "artist": artist,
             "datetime": str(event_datetime),
